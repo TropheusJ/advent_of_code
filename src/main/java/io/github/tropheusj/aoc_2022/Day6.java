@@ -1,11 +1,13 @@
-package io.github.tropheusj;
+package io.github.tropheusj.aoc_2022;
+
+import io.github.tropheusj.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaySix {
+public class Day6 {
 	public static void main(String[] args) {
-		String data = Data.get(6);
+		String data = Data.get(2022, 6);
 		Outer:
 		for (int i = 3; i < data.length(); i++) {
 			List<Character> chars = new ArrayList<>();

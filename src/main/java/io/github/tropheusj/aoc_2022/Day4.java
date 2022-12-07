@@ -1,8 +1,10 @@
-package io.github.tropheusj;
+package io.github.tropheusj.aoc_2022;
 
-public class DayFour {
+import io.github.tropheusj.Data;
+
+public class Day4 {
 	public static void main(String[] args) {
-		String data = Data.get(4);
+		String data = Data.get(2022, 4);
 		String[] pairs = data.split("\n");
 		int fullDuplicates = 0;
 		int overlaps = 0;

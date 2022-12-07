@@ -1,6 +1,8 @@
-package io.github.tropheusj;
+package io.github.tropheusj.aoc_2022;
 
-public class DayTwo {
+import io.github.tropheusj.Data;
+
+public class Day2 {
 	public static final char DO_LOSE = 'X';
 	public static final char DO_DRAW = 'Y';
 	public static final char DO_WIN = 'Z';
@@ -22,7 +24,7 @@ public class DayTwo {
 	public static final int SCISSORS_POINTS = 3;
 
 	public static void main(String[] args) {
-		String data = Data.get(2);
+		String data = Data.get(2022, 2);
 		String[] rounds = data.split("\n");
 		int points = 0;
 		for (String round : rounds) {

@@ -1,10 +1,12 @@
-package io.github.tropheusj;
+package io.github.tropheusj.aoc_2022;
+
+import io.github.tropheusj.Data;
 
 import java.util.*;
 
-public class DayFive {
+public class Day5 {
 	public static void main(String[] args) {
-		String data = Data.get(5);
+		String data = Data.get(2022, 5);
 		String[] split = data.split("\n\n");
 		Stack<Character>[] singleMoveStacks = parseStacks(split[0]);
 		Stack<Character>[] multiMoveStacks = parseStacks(split[0]);

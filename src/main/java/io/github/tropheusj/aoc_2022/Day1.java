@@ -1,8 +1,10 @@
-package io.github.tropheusj;
+package io.github.tropheusj.aoc_2022;
 
-public class DayOne {
+import io.github.tropheusj.Data;
+
+public class Day1 {
 	public static void main(String[] args) {
-		String data = Data.get(1);
+		String data = Data.get(2022, 1);
 		String[] elves = data.split("\n\n");
 		int largest = 0;
 		int largest2 = 0;

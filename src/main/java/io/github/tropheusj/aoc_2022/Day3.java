@@ -1,15 +1,17 @@
-package io.github.tropheusj;
+package io.github.tropheusj.aoc_2022;
+
+import io.github.tropheusj.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DayThree {
+public class Day3 {
 	public static final int LOWER_OFFSET = 'a' - 1;
 	public static final int UPPER_OFFSET = ('A' - 1) - 26;
 	public static final char[] CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
 	public static void main(String[] args) {
-		String data = Data.get(3);
+		String data = Data.get(2022, 3);
 		int totalPriorities = 0;
 		int totalBadgePriorities = 0;
 		String[] split = data.split("\n");
