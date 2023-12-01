@@ -1,5 +1,6 @@
 package io.github.tropheusj;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -26,13 +27,19 @@ public class Main {
 		System.out.println();
 		try {
 			Class<?> code = Class.forName("io.github.tropheusj.aoc_%s.Day%s".formatted(year, day));
-			Method run = code.getDeclaredMethod("main", String[].class);
-			run.invoke(null, (Object) args);
+			Solution instance = (Solution) code.getConstructor().newInstance();
+			Method run = code.getDeclaredMethod("run", String.class);
+			String data = Data.get(year, day);
+			run.invoke(instance, data);
+		} catch (FileNotFoundException e) {
+			System.out.println("No data found for this day.");
+		} catch (ClassCastException e) {
+			System.out.println("Class does not implement Solution");
+		} catch (InstantiationException e) {
+			System.out.println("Constructor is invalid");
 		} catch (ClassNotFoundException e) {
 			System.out.println("No code found for this day.");
-		} catch (NoSuchMethodException e) {
-			throw new RuntimeException("No main method found for this day!", e);
-		} catch (InvocationTargetException | IllegalAccessException e) {
+		} catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
 			throw new RuntimeException(e);
 		}
 	}
